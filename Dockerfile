@@ -1,8 +1,4 @@
-# 1. استخدام خادم ويب خفيف وجاهز (Nginx) لعرض صفحاتك
 FROM nginx:alpine
-
-# 2. نسخ كل ملفات مشروعك إلى المجلد الذي يقرأ منه الخادم
+RUN apk update && apk upgrade --no-cache
 COPY . /usr/share/nginx/html
-
-# 3. فتح المنفذ 80 لتصفح الموقع   
 EXPOSE 80
